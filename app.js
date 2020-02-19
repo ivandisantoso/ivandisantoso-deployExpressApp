@@ -1,6 +1,7 @@
 const express = require("express");
 const exphbs  = require('express-handlebars');
 const bodyParser = require("body-parser");
+const port = process.env.PORT || 3000;
 
 const productModel = require("./models/products");
 
@@ -58,8 +59,8 @@ app.post("/products",(req,res)=>{
 
 
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT , ()=>{
 
-    console.log(`Web Server is up and running`);
+app.listen(port , ()=>{
+
+    console.log(`Web Server is up and running ${port}!`);
 })
